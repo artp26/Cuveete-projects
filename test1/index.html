@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ROCK PAPER SCISSORS</title>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<div class="topsection">
+			<header>
+				<div class="title">
+					<p class="p1">ROCK </p>
+					<p class="p2">PAPER </p>
+					<p class="p3">SCISSORS</p>
+				</div>
+				<div class="score">
+					<div class="scoreBox">
+						<p>
+							YOUR <br />
+							SCORE
+						</p>
+						<span id="userScore"></span>
+					</div>
+					<div class="scoreBox">
+						<p>COMPUTER <br />SCORE</p>
+						<span id="pcScore"></span>
+					</div>
+				</div>
+				<span id="rl" onclick="refresh()">&#8634;</span>
+			</header>
+		</div>
+
+		<main class="middle">
+        <div class="select" id="selects">
+				<div class="Img rock" onclick="letsPlay('rock')">
+					<img src="./image/rock.png" alt="" />
+						
+				</div>
+               <div class="Img paper" onclick="letsPlay('paper')">
+					<img src="./image/paper.png" alt="" />
+				</div>
+				<div class="Img scissor" onclick="letsPlay('scissor')">
+					<img src="./image/scissor.png" alt="" />
+				</div>
+			</div>
+
+			<div class="Results" id="Result">
+				<div class="resultshow">
+					<div class="myChoice" id="myChoice">
+						<img src="./image/rock.png" alt="" id="userChoice" />
+						<svg xmlns="http://www.w3.org/2000/svg" width="164" height="164" viewBox="0 0 164 164" fill="none">
+							<g filter="url(#filter0_i_1486_12)">
+							  <circle cx="83" cy="81" r="55" fill="white"/>
+							</g>
+							<g filter="url(#filter1_d_1486_12)">
+							  <circle cx="83" cy="81" r="63" stroke="#0074B6" stroke-width="16" shape-rendering="crispEdges"/>
+							</g>
+							<defs>
+							  <filter id="filter0_i_1486_12" x="28" y="26" width="113" height="110" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+								<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+								<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+								<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+								<feMorphology radius="1" operator="erode" in="SourceAlpha" result="effect1_innerShadow_1486_12"/>
+								<feOffset dx="3"/>
+								<feGaussianBlur stdDeviation="10.5"/>
+								<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+								<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+								<feBlend mode="normal" in2="shape" result="effect1_innerShadow_1486_12"/>
+							  </filter>
+							  <filter id="filter1_d_1486_12" x="0" y="0" width="164" height="164" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+								<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+								<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+								<feOffset dx="-1" dy="1"/>
+								<feGaussianBlur stdDeviation="5.5"/>
+								<feComposite in2="hardAlpha" operator="out"/>
+								<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"/>
+								<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1486_12"/>
+								<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1486_12" result="shape"/>
+							  </filter>
+							</defs>
+						  </svg>
+					</div>
+					<div class=" finalResult" id="choiceResultDetails">
+						<h1 id="yourTitle">You Win</h1>
+						<h2 id="resultTie">Against PC</h2>
+						<button onclick="playagain()">Play Again</button>
+					</div>
+					<div class="pcChoice" id="pcChoice">
+						<img src="./image/scissor.png" alt="" id="loadingDone" />
+						<img src="./image/hand.png" alt="" id="loading" />
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<div class="buttonSection">
+			<div class="button " id="ruleButton" onclick="closeRules()">
+				Rules
+			</div>
+			<a href="./win.html" class="button ripple" id="next">Next</a>
+		</div>
+		<div id="gameRule">
+			<h1>Game Rule</h1>
+			<ul>
+				<li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+				<li>
+					Agree ahead of time whether you’ll count off “rock, paper, scissors,
+					shoot” or just “rock, paper, scissors.”
+				</li>
+				<li>
+					Use rock, paper, scissors to settle minor decisions or simply play to
+					pass the time
+				</li>
+				<li>
+					If both players lay down the same hand, each player lays down another
+					hand
+				</li>
+			</ul>
+			<div id="closeRules" onclick="closeRules()">X</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
